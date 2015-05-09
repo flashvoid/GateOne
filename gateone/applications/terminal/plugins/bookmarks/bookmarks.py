@@ -404,6 +404,7 @@ class BookmarksDB(object):
         If *updateSequenceNum* is 0 or undefined, all bookmarks will be
         returned.
         """
+        if self.user == 'ANONYMOUS': updateSequenceNum=0
         out_bookmarks = []
         for bm in self.bookmarks:
             if bm['updateSequenceNum'] > updateSequenceNum:
